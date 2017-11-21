@@ -22,13 +22,13 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
 ## How To Use
-<ul>
+<ol>
   <li>Git Clone repositories</li>
   <li>Open Terminal and run "php artisan key:generate"</li>
   <li>run "composer update"</li>
   <li>change .env.example to .env and configure Database</li>
   <li>run "php artisan migrate" and "php artisan serve"</li>
   <li>Try access in browser "localhost:8000"</li>
- </ul>
+ </ol>
   
 
