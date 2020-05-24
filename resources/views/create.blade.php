@@ -51,7 +51,7 @@
 
 				<!--Horizontal Form-->
 				<!--===================================================-->
-				<form class="form-horizontal" action="/create/post" method="POST">
+				<form class="form-horizontal" action="{{ route('store') }}" method="POST">
 					{{csrf_field()}}
 					<div class="panel-body">
 						<div class="form-group">
