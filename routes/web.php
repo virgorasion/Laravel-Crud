@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'TaskController@index');
-Route::get('/edit/{id}', 'TaskController@edit');
-Route::put('/edit/{id}/update', 'TaskController@update');
-Route::get('/delete/{id}', 'TaskController@delete');
-Route::get('/create', 'TaskController@create');
-Route::post('/create/{post}', 'TaskController@store');
+Route::get('/', 'TaskController@index')->name('index');
+Route::get('/edit/{id}', 'TaskController@edit')->name('edit');
+Route::put('/edit/{id}/update', 'TaskController@update')->name('update');
+Route::get('/delete/{id}', 'TaskController@delete')->name('delete');
+Route::get('/create', 'TaskController@create')->name('create');
+Route::post('/create', 'TaskController@store')->name('store');
+

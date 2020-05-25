@@ -51,7 +51,7 @@
 
 				<!--Horizontal Form-->
 				<!--===================================================-->
-				<form class="form-horizontal" action="/edit/{{$task['id']}}/update" method="POST">
+				<form class="form-horizontal" action="{{ route('update', [$task->id]) }}" method="POST">
 					{{csrf_field()}}
 					<div class="panel-body">
 						<div class="form-group">

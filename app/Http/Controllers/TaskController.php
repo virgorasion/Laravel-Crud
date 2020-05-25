@@ -2,30 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
 use Illuminate\Http\Request;
-use App\task;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $task = task::all();
+        $task = Task::all();
 
         return view('index', compact('task'));
     }
 
     public function edit($id)
     {
-        $task = task::find($id);
+        $task = Task::find($id);
         
         return view('edit', compact('task'));
     }
 
-    public function update($id)
+    public function update($id, Request $req)
     {
-        $task = task::find($id)->update([
-            'title' => request()->title,
-            'body' => request()->body
+        $task = Task::find($id)->update([
+            'title' => $req->title,
+            'body' => $req->body
         ]);
 
         return redirect('/');
@@ -33,7 +33,7 @@ class TaskController extends Controller
 
     public function delete($id)
     {
-        $task = task::find($id)->delete();
+        $task = Task::find($id)->delete();
 
         return redirect('/');
     }
@@ -43,14 +43,12 @@ class TaskController extends Controller
         return view('create');
     }
 
-    public function store()
-    {
-        $task = new task;
-
-        $task->title = request()->title;
-        $task->body = request()->body;
-
-        $task->save();
+    public function store(Request $req)
+	{
+		$createTask = Task::create([
+			'title' => $req->title,
+			'body'  => $req->body
+		]);
 
         return redirect('/');
     }
